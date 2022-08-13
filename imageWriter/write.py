@@ -1,9 +1,18 @@
+from asyncore import read
 import string
-
+import tkinter as tk
+from tkinter import filedialog
 from PIL import Image
 
-print("Write Your Message")
+root = tk.Tk()
+root.withdraw()
+
+print("Write Your Message (if u need file convert write \"file\")")
 messageText = input(">>")
+if messageText == "file":
+    path = filedialog.askopenfilename()  
+    f = open(path, "r")
+    messageText = f.read()
 
 #old alphabet var:
 #["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"," "]
