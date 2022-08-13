@@ -1,8 +1,10 @@
-from random import randint
+import string
 
 from PIL import Image
 
-Alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"," "]
+#old alphabet var:
+#["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"," "]
+Alphabet = string.printable
 
 print("Reading")
 # open image and get size
@@ -23,7 +25,7 @@ for y in range(height):
             if int((255 / len(Alphabet)) * i) == r:
                 break;
             index += 1
-        text = text + Alphabet[index - 1].lower()   
+        text = text + Alphabet[index - 1]  
 print("readed text is:")     
 print(text)
 

@@ -1,12 +1,13 @@
-from email import message
-from operator import index
-from random import randint
+import string
 
 from PIL import Image
 
 print("Write Your Message")
 messageText = input(">>")
-Alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"," "]
+
+#old alphabet var:
+#["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"," "]
+Alphabet = string.printable
 
 # Set a size and mode, and create a new image.
 width, height = (len(messageText), 1)
@@ -18,7 +19,7 @@ my_pixels = my_image.load()
 s = 0
 print("Started")
 for char in messageText:  
-    charUpper = (char.upper())
+    charUpper = char
     i = 0
     for letter in Alphabet:
         i += 1
