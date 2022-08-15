@@ -28,16 +28,18 @@ my_pixels = my_image.load()
 s = 0
 print("Started")
 for char in messageText:  
-    charUpper = char
+    
     i = 0
     for letter in Alphabet:
         i += 1
-        if  charUpper == letter:                        
+        if  char == letter:                        
             break;
     pixelColor = int((255 / len(Alphabet)) * i)
     print("Char Writed Pixel Code = " , pixelColor)    
-    pixel = (pixelColor,pixelColor,pixelColor)  
+    pixel = (pixelColor,pixelColor,pixelColor)     
     my_pixels[s,0] = pixel
+
+        
     s +=1
 
 my_image.save("text.png")

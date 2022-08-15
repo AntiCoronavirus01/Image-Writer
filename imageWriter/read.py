@@ -42,4 +42,3 @@ for y in range(height):
         text = text + Alphabet[index - 1]  
 print("readed text is:")     
 print(text)
-
